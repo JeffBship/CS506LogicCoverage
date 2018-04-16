@@ -28,9 +28,9 @@ public class CalTest {
     
     @Test
     //Tests p1, a=T 
-    //Tests p2, b=T 
+    //Tests p2, bcd=TFT 
     //Tests p3, e=F
-    public void test_P1aT_P2bT_P3eF(){
+    public void test_P1aT_P2TFT_P3eF(){
         //(month1, day1, month2, day2, year)
         int result = Cal.cal(1, 1, 1, 3, 99);
         assertEquals(result, 2);
@@ -50,9 +50,9 @@ public class CalTest {
     
     @Test
     //tests p1, a=F  -> P2,P3 reachable
-    //tests p2, b=F, d=T
+    //tests p2, bcd=FTT
     //tests p3, e=T
-    public void test_P1aF_P2bF_P2dT_P3eT(){
+    public void test_P1aF_P2FTT_P3eT(){
         //(month1, day1, month2, day2, year)
         int result = Cal.cal(1, 1, 12, 31, 100);
         assertEquals(result, 364);
@@ -60,18 +60,18 @@ public class CalTest {
     
     @Test
     //tests p1, a=F  -> P2,P3 reachable
-    //tests p2, c=T, d=F 
+    //tests p2, bcd=FFT 
     //tests p3, 
-    public void test_P2cT_P2dF(){
+    public void test_P2cT_P2FFT(){
         int result = Cal.cal(1, 1, 12, 31, 4);
         assertEquals(result, 365);
     }
     
     @Test
     //tests p1, a=f -> P2,P3 reachable
-    //tests p2, c=F 
+    //tests p2, bcd=FTF
     //tests p3, 
-    public void test_P2cF(){
+    public void test_P2FTF(){
         int result = Cal.cal(1, 1, 12, 31, 400);
         assertEquals(result, 365);
     }
