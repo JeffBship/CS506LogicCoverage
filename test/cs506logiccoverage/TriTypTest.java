@@ -38,9 +38,9 @@ public class TriTypTest {
         cases: T, F
       p6 = g || h || i
         p6 reached when p1 = F and p5 = T
-        p5g = !h && !i
-        p5h = !g && !i
-        p5i = !g && !h
+        p6g = !h && !i
+        p6h = !g && !i
+        p6i = !g && !h
         cases: FFF, TFF, FTF, FFT
       p7 = j
         p7 reached when p1,p5 = F
@@ -48,18 +48,18 @@ public class TriTypTest {
         cases: T, F
       p8 = k && l
         p8 reached when p1,p5,p7 = F
-        p7k = l
-        p7l = k
+        p8k = l
+        p8l = k
         cases: TT, FT, TF
       p9 = m && n
         p9 reached when p1,p5,p7,p8 = F
-        p8m = n
-        p8n = m
+        p9m = n
+        p9n = m
         cases: TT, FT, TF
       p10 = o && p
         p10 reached when p1,p5,p7,p8,p9 = F
-        p9o = p
-        p9p = o
+        p10o = p
+        p10p = o
         cases: TT, FT, TF
 
   Tests below tests how method counts days between Jan1, and Mar1, to ensure
@@ -120,6 +120,51 @@ public class TriTypTest {
     @Test
     public void testIsosceles3(){
         int result = TriTyp.triang(3, 2, 2);
+        assertEquals(result, 2);
+    }
+
+    //p1 - FFF
+    //p2 - F
+    //p3 - F
+    //p4 - T
+    //p5 - F
+    //p7 - F
+    //p8 - FT
+    //p9 - FT
+    //p10 - TF
+    @Test
+    public void testIsosceles4(){
+        int result = TriTyp.triang(4, 2, 2);
+        assertEquals(result, 2);
+    }
+
+    //p1 - FFF
+    //p2 - F
+    //p3 - T
+    //p4 - F
+    //p5 - F
+    //p7 - F
+    //p8 - FT
+    //p9 - TF
+    //p10 - FT
+    @Test
+    public void testIsosceles5(){
+        int result = TriTyp.triang(2, 4, 2);
+        assertEquals(result, 2);
+    }
+
+    //p1 - FFF
+    //p2 - F
+    //p3 - T
+    //p4 - F
+    //p5 - F
+    //p7 - F
+    //p8 - TF
+    //p9 - FT
+    //p10 - FT
+    @Test
+    public void testIsosceles6(){
+        int result = TriTyp.triang(2, 2, 4);
         assertEquals(result, 2);
     }
 
