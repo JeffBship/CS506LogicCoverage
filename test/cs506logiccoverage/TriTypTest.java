@@ -62,8 +62,6 @@ public class TriTypTest {
         p10p = o
         cases: TT, FT, TF
 
-  Tests below tests how method counts days between Jan1, and Mar1, to ensure
-  days in February are added correctly in leap years and non leap years.
   */
 
     public TriTypTest() {
