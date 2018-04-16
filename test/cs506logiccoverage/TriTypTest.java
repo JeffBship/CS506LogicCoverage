@@ -20,6 +20,9 @@ public class TriTypTest {
         p1b = !a && !c
         p1c = !a && !b
         cases: FFF, TFF, FTF, FFT
+        a active: FFF, TFF
+        b active: FFF, FTF
+        c active: FFF, FFT
       p2 = d
         p2 reached when p1 = F
         d always active
@@ -42,6 +45,9 @@ public class TriTypTest {
         p6h = !g && !i
         p6i = !g && !h
         cases: FFF, TFF, FTF, FFT
+        g active: FFF, TFF
+        h active: FFF, FTF
+        i active: FFF, FFT
       p7 = j
         p7 reached when p1,p5 = F
         j always active
@@ -51,16 +57,22 @@ public class TriTypTest {
         p8k = l
         p8l = k
         cases: TT, FT, TF
+        k active: TT, FT
+        l active: TT, TF
       p9 = m && n
         p9 reached when p1,p5,p7,p8 = F
         p9m = n
         p9n = m
         cases: TT, FT, TF
+        m active: TT, FT
+        n active: TT, TF
       p10 = o && p
         p10 reached when p1,p5,p7,p8,p9 = F
         p10o = p
         p10p = o
         cases: TT, FT, TF
+        o active: TT, FT
+        p active: TT, TF
 
   */
 
